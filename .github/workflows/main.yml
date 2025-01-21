@@ -29,12 +29,12 @@ jobs:
     - name: Set Variables
       id: set-var
       run: |
-        echo "DOCKER_REGISTRY=oolralra" >> $GITHUB_ENV
+        echo "DOCKER_REGISTRY=kjs0508" >> $GITHUB_ENV
         echo "DOCKER_REPOSITORY1=back" >> $GITHUB_ENV #본인 ecr레포에 맞게 수정
         echo "DOCKER_REPOSITORY2=front" >> $GITHUB_ENV #본인 ecr레포에 맞게 수정
         echo "IMAGE_TAG=${{ github.run_number }}" >> $GITHUB_ENV
-        echo "GIT_EMAIL=oolralra@gmail.com" >> $GITHUB_ENV
-        echo "GIT_NAME=oolralra" >> $GITHUB_ENV
+        echo "GIT_EMAIL=wjdtn0508@gmail.com" >> $GITHUB_ENV
+        echo "GIT_NAME=MakeMeCookie" >> $GITHUB_ENV
    
     - name: Docker Image Build
       id: build-image
@@ -49,7 +49,7 @@ jobs:
     - name: Checkout Deployment Repository
       uses: actions/checkout@v4
       with:
-        repository: oolralra/my_deploy #본인에 맞게 수정
+        repository: MakeMeCookie/my_deploy #본인에 맞게 수정
         ref: main  # branch
         token: ${{ secrets.GH_TOKEN }}
         
